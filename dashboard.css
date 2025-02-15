@@ -1,0 +1,154 @@
+body {
+    background-color: #f4f7fa;
+    font-family: "Poppins", sans-serif;
+}
+#wrapper{
+
+}
+.sidebar {
+    background-color: #343a40;
+    color: white;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.nav-item {
+    display: flex;
+    padding: 10px;
+    transition: all 0.3s ease;
+    align-items: center;
+    cursor: pointer;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+.content {
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.card-custom {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 1000;
+    /* background-color: #343a40; */
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Smooth transition for sidebar */
+.sidebar.collapsed {
+    width: 70px;
+    padding-left: 0;
+}
+
+.sidebar.collapsed a {
+    display: none;
+}
+
+.content.collapsed {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .sidebar.collapsed {
+        display: block;
+        width: 100%;
+    }
+    .sidebar.collapsed a {
+    display: block;
+}
+    .content.collapsed {
+        margin-left: 0;
+    }
+}
+/* Right Sidebar */
+.right-sidebar {
+    position: fixed;
+    top: 70px;
+    right: -100px; 
+    height: 100vh;
+    width: 150px;
+    background-color: #FFFF;
+    color: black;
+    cursor: pointer;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 99999;
+}
+.icons-div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+}
+.right-sidebar b {
+    display: none;
+}
+
+.right-sidebar:hover {
+    right: 0;
+}
+.right-sidebar:hover b {
+    display: block;
+}
+
+.right-sidebar .icon-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    gap: 60px;
+}
+
+.right-sidebar i {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+/* Navbar style */
+.navbar {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    width: 100%;
+    padding: 0px;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+}
+
+.navbar .sidebar-toggle-btn {
+    font-weight: bold;
+}
